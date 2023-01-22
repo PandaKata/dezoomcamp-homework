@@ -172,8 +172,7 @@ WHERE passenger_count = 3 AND lpep_pickup_datetime > '2019-01-01 00:00:00' AND l
 
 ### Question 6 - largest tip
 
-South Ozone Park
-
+Long Island City/Queens Plaza (88$)
 
 ```
 SELECT 
