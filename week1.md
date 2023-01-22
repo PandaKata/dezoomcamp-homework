@@ -53,7 +53,7 @@ engine = create_engine('postgresql://root:root@localhost:5431/ny_taxi')
 
 !wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-01.csv.gz
 
-df_iter_green = pd.read_csv('green_tripdata_2019-01.csv.gz', iterator=True, chunksize=100000)
+df_iter_green = pd.read_csv('green_tripdata_2019-01.csv.gz', iterator=True, chunksize=50000)
 
 green_taxi_data.head(n=0).to_sql(name='green_taxi_data', con=engine, if_exists='replace')
 
