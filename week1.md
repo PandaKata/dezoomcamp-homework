@@ -23,23 +23,40 @@ Start pgadmin & postgres in one network with docker compose
 Contents of the .yaml-file:
 `
 services:
+
   pgdatabase:
+  
     image: postgres:13
+    
     environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=ny_taxi
+    
+    - POSTGRES_USER=root
+    
+    - POSTGRES_PASSWORD=root
+    
+    - POSTGRES_DB=ny_taxi
+    
     volumes:
-      - "./ny_taxi_postgres_data:/var/lib/postgresql/data:rw"
+    
+    - "./ny_taxi_postgres_data:/var/lib/postgresql/data:rw"
+    
     ports:
-      - "5431:5432"
+    
+    - "5431:5432"
+  
   pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
-      - PGADMIN_DEFAULT_PASSWORD=root
-    ports:
-      - "8080:80"
+  
+  image: dpage/pgadmin4
+  
+  environment:
+  
+  - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+  
+  - PGADMIN_DEFAULT_PASSWORD=root
+  
+  ports:
+  
+  - "8080:80"
 `
 
 Insert green taxi trips data via jupyter notebook:
