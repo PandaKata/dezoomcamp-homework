@@ -98,6 +98,7 @@ while True:
 How many trips were made on January 15th?
 
 &rarr; 20530
+
 Corresponding query:
 
 ```
@@ -137,7 +138,7 @@ WHERE
 ORDER BY trip_distance DESC;
 ```
 
-2019-01-15: 117.99 (miles) &arr; largest trip
+2019-01-15: 117.99 (miles) &rarr; largest trip
 ```
 SELECT
 	trip_distance,
