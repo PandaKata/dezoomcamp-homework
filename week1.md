@@ -61,7 +61,7 @@ services:
 
 Insert green taxi trips data via jupyter notebook:
 
-`
+```
 import pandas as pd
 from time import tme
 from sqlalchemy import create_engine
@@ -93,11 +93,12 @@ while True:
  df_zones = pd.read_csv('taxi_zone_lookup.csv')
  
  df_zones.to_sql(name='zones', con=engine, if_exists='replace')
-`
+```
 
 How many trips were made on January 15th?
 
 &rarr; 20530
+Corresponding query:
 
 ```
 SELECT
@@ -111,7 +112,9 @@ WHERE
 
 ### Question 4 - largest trip for each day:
 
-2019-01-18: 80,96
+I decided to make a query for each of the 4 days:
+
+2019-01-18: 80.96 (miles?)
 ```
 SELECT
 	trip_distance,
@@ -122,7 +125,7 @@ WHERE
 	lpep_pickup_datetime > '2019-01-18 00:00:00' AND lpep_dropoff_datetime < '2019-01-18 23:59:59'
 ORDER BY trip_distance DESC;
 ```
-2019-01-28: 64,27
+2019-01-28: 64.27 (miles)
 ```
 SELECT
 	trip_distance,
@@ -134,7 +137,7 @@ WHERE
 ORDER BY trip_distance DESC;
 ```
 
-2019-01-15: 117.99
+2019-01-15: 117.99 (miles) &arr; largest trip
 ```
 SELECT
 	trip_distance,
@@ -146,7 +149,7 @@ WHERE
 ORDER BY trip_distance DESC;
 ```
 
-2019-01-10: 64.2
+2019-01-10: 64.2 (miles)
 
 ```
 SELECT
@@ -161,6 +164,7 @@ ORDER BY trip_distance DESC;
 
 
 ### Question 5 - the number of passengers
+
 
 2: 1282 ; 3: 254
 
