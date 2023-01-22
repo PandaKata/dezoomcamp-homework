@@ -51,15 +51,12 @@ from sqlalchemy import create_engine
 
 engine = create_engine('postgresql://root:root@localhost:5431/ny_taxi')
 
-# add green taxi trips
 !wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-01.csv.gz
 
 df_iter_green = pd.read_csv('green_tripdata_2019-01.csv.gz', iterator=True, chunksize=100000)
 
-# add columns
 green_taxi_data.head(n=0).to_sql(name='green_taxi_data', con=engine, if_exists='replace')
 
-# ingest data
 while True:
     t_start = time()
 
@@ -74,7 +71,6 @@ while True:
     
     print('inserted another chunk..., took %.3f seconds' % (t_end - t_start))
  
- # add lookup table
  !wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv
  
  df_zones = pd.read_csv('taxi_zone_lookup.csv')
