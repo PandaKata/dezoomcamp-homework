@@ -21,7 +21,7 @@ Running `pip list` in the bash prompt tells us that there are 3 packages install
 Start pgadmin & postgres in one network with docker compose
 
 Contents of the .yaml-file:
-`
+```
 services:
 
   pgdatabase:
@@ -57,7 +57,7 @@ services:
   ports:
   
   - "8080:80"
-`
+```
 
 Insert green taxi trips data via jupyter notebook:
 
