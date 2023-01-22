@@ -99,7 +99,7 @@ How many trips were made on January 15th?
 
 &rarr; 20530
 
-`
+```
 SELECT
 	lpep_pickup_datetime,
 	lpep_dropoff_datetime
@@ -107,12 +107,12 @@ FROM green_taxi_data
 WHERE 
 	lpep_pickup_datetime > '2019-01-15 00:00:00' AND lpep_dropoff_datetime < '2019-01-15 23:59:59';
 
-`
+```
 
 ### Question 4 - largest trip for each day:
 
 2019-01-18: 80,96
-
+```
 SELECT
 	trip_distance,
 	lpep_pickup_datetime,
@@ -121,9 +121,9 @@ FROM green_taxi_data
 WHERE 
 	lpep_pickup_datetime > '2019-01-18 00:00:00' AND lpep_dropoff_datetime < '2019-01-18 23:59:59'
 ORDER BY trip_distance DESC;
-
+```
 2019-01-28: 64,27
-
+```
 SELECT
 	trip_distance,
 	lpep_pickup_datetime,
@@ -132,10 +132,10 @@ FROM green_taxi_data
 WHERE 
 	lpep_pickup_datetime > '2019-01-28 00:00:00' AND lpep_dropoff_datetime < '2019-01-28 23:59:59'
 ORDER BY trip_distance DESC;
-
+```
 
 2019-01-15: 117.99
-
+```
 SELECT
 	trip_distance,
 	lpep_pickup_datetime,
@@ -144,10 +144,11 @@ FROM green_taxi_data
 WHERE 
 	lpep_pickup_datetime > '2019-01-15 00:00:00' AND lpep_dropoff_datetime < '2019-01-15 23:59:59'
 ORDER BY trip_distance DESC;
-
+```
 
 2019-01-10: 64.2
 
+```
 SELECT
 	trip_distance,
 	lpep_pickup_datetime,
@@ -156,20 +157,22 @@ FROM green_taxi_data
 WHERE 
 	lpep_pickup_datetime > '2019-01-10 00:00:00' AND lpep_dropoff_datetime < '2019-01-10 23:59:59'
 ORDER BY trip_distance DESC;
-
+```
 
 
 ### Question 5 - the number of passengers
 
 2: 1282 ; 3: 254
 
+```
 SELECT
 	COUNT(passenger_count)
 FROM green_taxi_data
 WHERE passenger_count = 2 AND lpep_pickup_datetime > '2019-01-01 00:00:00' AND lpep_dropoff_datetime < '2019-01-01 23:59:59';
-
 ```
-AND 
+and 
+
+``` 
 
 SELECT
 	COUNT(passenger_count)
