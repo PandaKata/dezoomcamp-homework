@@ -177,13 +177,13 @@ South Ozone Park
 
 ```
 SELECT 
-	"PULocationID",
-	"DOLocationID",
+	t."PULocationID",
+	t."DOLocationID",
 	t.tip_amount,
 	zpu."Zone" AS pickup_zone,
 	zdo."Zone" AS dropoff_zone
 FROM 
-	yellow_taxi_trips AS t JOIN zones zpu
+	green_taxi_data AS t JOIN zones zpu
 	ON t."PULocationID" = zpu."LocationID"
 	JOIN zones zdo 
 	ON t."DOLocationID" = zdo."LocationID"
