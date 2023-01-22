@@ -187,4 +187,23 @@ WHERE passenger_count = 3 AND lpep_pickup_datetime > '2019-01-01 00:00:00' AND l
 
 
 
+### Question 6 - largest tip
+
+South Ozone Park with 17 $.
+
+My JOIN wasn't working so I had to improvise and look for the LocationIDs in the zones table manually:
+
+```
+SELECT 
+	"PULocationID",
+	"DOLocationID",
+	tip_amount
+FROM 
+	green_taxi_data
+WHERE 
+	"PULocationID" = 7 AND
+	"DOLocationID" = 49 OR "DOLocationID" = 130 OR "DOLocationID" = 216 OR "DOLocationID" = 146
+ORDER BY tip_amount DESC;
+```
+
 
