@@ -1,5 +1,6 @@
 ## Part 1: Docker & SQL
 
-Question:
+Question 1:
 
-sdfsdf
+`docker --help` tells us we need to run `docker build --help` to find out more about the `docker build` command.
+
