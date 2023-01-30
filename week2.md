@@ -1,4 +1,4 @@
-
+1, 
 
 447770
 
@@ -68,3 +68,15 @@ if __name__ == '__main__':
 
 
 ```
+
+
+2,
+
+0 5 1 * * 
+
+From the command line:
+
+
+`prefect deployment build etl_web_to_gcs.py:etl_web_to_gcs -n homework2 --cron "0 5 1 * * " -a`
+
+`prefect agent start -q 'default'`
