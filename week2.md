@@ -87,3 +87,86 @@ The corresponding lines in the command line:
 
 ### Question 3 - loading data to BigQuery
 
+First: load two tables with python etl_web_to_gcs.py 
+
+
+
+prefect deployment build etl_gcs_to_bq.py:etl_parent_flow -n "homework_yellow"
+
+prefect deployment apply etl_parent_flow-deployment.yaml
+
+start agent
+prefect agent start -q 'default'
+
+processed lines:
+14,851,920
+
+
+corresponding code
+
+```
+from pathlib import Path
+import pandas as pd
+from prefect import flow,task
+from prefect_gcp.cloud_storage import GcsBucket
+from prefect_gcp import GcpCredentials
+
+
+@task(retries=3)
+def extract_from_gcs(color: str, year: int, month: int) -> Path:
+    """Download trip data from GCS"""
+    gcs_path = f"data/{color}/{color}_tripdata_{year}-{month:02}.parquet"
+    gcs_block = GcsBucket.load("zoom-gcs")
+    gcs_block.get_directory(from_path=gcs_path, local_path=f"../data/")
+    return Path(f"{gcs_path}")
+
+@task(log_prints=True)
+def transform(path: Path) -> pd.DataFrame:
+    """Data cleaning example (very minimal)"""
+    df = pd.read_parquet(path)
+    return df
+
+@task()
+def write_bq(df: pd.DataFrame) -> None:
+    """Write DF to BigQuery
+    We are using pandas BigQuery functions"""
+    
+    gcp_credentials_block = GcpCredentials.load("zoom-gcp-creds")
+
+    df.to_gbq(
+        destination_table="dezoomprefect.rides",
+        project_id="sonorous-house-375411",
+        credentials=gcp_credentials_block.get_credentials_from_service_account(),
+        chunksize=500000,
+        if_exists="append",
+    )
+
+@flow(log_prints=True)
+def etl_gcs_to_bq(year: int, month: int, color: str):
+    """main etl flow to load data into BigQuery"""
+
+    path = extract_from_gcs(color, year, month)
+    df = transform(path)
+    write_bq(df)
+    print("Transform Complete. Length of df: " + str(len(df)) + " rows.")
+
+
+@flow()
+def etl_parent_flow(
+    months: list[int] = [2, 3], year: int = 2019, color: str = "yellow"
+):
+    for month in months:
+        etl_gcs_to_bq(year, month, color)
+
+if __name__ == '__main__':
+    color = "yellow"
+    months = [2, 3]
+    year = 2021
+    etl_parent_flow(months, year, color)
+
+
+```
+
+### Question 4 - Github Storage Block
+
+
