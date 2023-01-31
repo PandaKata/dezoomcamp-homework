@@ -1,6 +1,11 @@
-1, 
+# Homework for week 2 of DE Zoomcamp
 
-447770
+### Question 1 - load January 2020 data
+
+The dataset has 447770 rows.
+
+Corresponding Python code:
+
 
 ```
 from pathlib import Path
@@ -70,12 +75,11 @@ if __name__ == '__main__':
 ```
 
 
-2,
+Question 2 - scheduling with Cron
 
-0 5 1 * * 
+The cron schedule for a run on the first of every month at 5am UTC is ** 0 5 1 * * ** 
 
-From the command line:
-
+The corresponding lines in the command line:
 
 `prefect deployment build etl_web_to_gcs.py:etl_web_to_gcs -n homework2 --cron "0 5 1 * * " -a`
 
