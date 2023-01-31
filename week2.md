@@ -169,4 +169,23 @@ if __name__ == '__main__':
 
 ### Question 4 - Github Storage Block
 
+88605
 
+
+
+
+
+
+### Question 6 - Secrets
+
+```
+from prefect.blocks.system import Secret
+
+secret_block = Secret.load("secret-homework")
+
+# Access the stored secret
+secret_block.get()
+
+```
+
+8
