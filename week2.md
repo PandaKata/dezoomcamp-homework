@@ -75,7 +75,7 @@ if __name__ == '__main__':
 ```
 
 
-Question 2 - scheduling with Cron
+### Question 2 - scheduling with Cron
 
 The cron schedule for a run on the first of every month at 5am UTC is 0 5 1 * *
 
@@ -84,3 +84,6 @@ The corresponding lines in the command line:
 `prefect deployment build etl_web_to_gcs.py:etl_web_to_gcs -n homework2 --cron "0 5 1 * * " -a`
 
 `prefect agent start -q 'default'`
+
+### Question 3 - loading data to BigQuery
+
