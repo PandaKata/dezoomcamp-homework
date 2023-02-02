@@ -169,8 +169,16 @@ if __name__ == '__main__':
 
 ### Question 4 - Github Storage Block
 
+1. create github_deploy.py file in github
+2. make Block gh-block
+3. command line: prefect deployment build github_deploy.py:etl_web_to_gcs --name task4 --apply -sb github/gh-block
+4. command line: prefect agent start -q 'default'
+5. quick run in the UI:
+
 88605
 
+
+### Question 5 - Email or Slack notifications
 
 
 
