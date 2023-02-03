@@ -186,12 +186,13 @@ I used Prefect Cloud to setup up a notification system via Email.
 
 Received the following email:
 
+```
 Flow run etl-web-to-gcs/quirky-dingo entered state `Completed` at 2023-02-03T14:38:19.054290+00:00.
 Flow ID: a343be8e-fff3-4922-9312-9ff72cca7d2b
 Flow run ID: 2de069e1-71d5-4dcf-b037-4d3b0ee205c5
 Flow run URL: https://app.prefect.cloud/account/cecdbbf0-5b0f-40a3-9b04-ab02393bf8b2/workspace/590c3c49-4407-4232-864e-e82faaa953b6/flow-runs/flow-run/2de069e1-71d5-4dcf-b037-4d3b0ee205c5
 State message: All states completed.
-
+```
 
 
 ### Question 6 - Secrets
