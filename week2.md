@@ -169,18 +169,20 @@ if __name__ == '__main__':
 
 ### Question 4 - Github Storage Block
 
-1. create github_deploy.py file in github
+1. create github_deploy.py, push to github
 2. make Block gh-block
-3. command line: prefect deployment build github_deploy.py:etl_web_to_gcs --name task4 --apply -sb github/gh-block
-4. command line: prefect agent start -q 'default'
-5. quick run in the UI:
+3. command line: `prefect deployment build github_deploy.py:etl_web_to_gcs --name task4 --apply -sb github/gh-block`
+4. command line: `prefect agent start -q 'default'`
+5. "quick run" in the UI:
 
-88605
+88605 rows are processed
 
 
 ### Question 5 - Email or Slack notifications
 
+I used Prefect Cloud to setup up a notification system via Email.
 
+514392 rows were processed.
 
 
 
