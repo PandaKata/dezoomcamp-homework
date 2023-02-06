@@ -90,13 +90,12 @@ The corresponding lines in the command line:
 First: load two tables with python etl_web_to_gcs.py 
 
 
+`prefect deployment build etl_gcs_to_bq.py:etl_parent_flow -n "homework_yellow"`
 
-prefect deployment build etl_gcs_to_bq.py:etl_parent_flow -n "homework_yellow"
-
-prefect deployment apply etl_parent_flow-deployment.yaml
+`prefect deployment apply etl_parent_flow-deployment.yaml`
 
 start agent
-prefect agent start -q 'default'
+`prefect agent start -q 'default'`
 
 processed lines:
 14,851,920
@@ -196,6 +195,8 @@ State message: All states completed.
 
 
 ### Question 6 - Secrets
+
+8 stars are seen.
 
 ```
 from prefect.blocks.system import Secret
