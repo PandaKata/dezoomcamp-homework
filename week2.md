@@ -196,7 +196,7 @@ State message: All states completed.
 
 ### Question 6 - Secrets
 
-8 stars are seen.
+8 * are seen.
 
 ```
 from prefect.blocks.system import Secret
@@ -208,4 +208,3 @@ secret_block.get()
 
 ```
 
-8
