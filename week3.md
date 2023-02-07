@@ -14,5 +14,7 @@ OPTIONS (
 count rows
 
 ```
-
+SELECT COUNT(*) 
+FROM `sonorous-house-375411.nytaxi.external_fhv_2019` 
+LIMIT 1000
 ```
