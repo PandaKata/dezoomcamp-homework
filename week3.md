@@ -75,6 +75,9 @@ Query for table that is neither partitioned nor clusteres
 
 ```
 -- This query will process 647.87 MB when run.
+SELECT COUNT(DISTINCT(affiliated_base_number))
+FROM sonorous-house-375411.nytaxi.external_fhv_2019_non_partitoned
+WHERE DATE(pickup_datetime) BETWEEN '2019-03-01' AND '2019-03-31';
 ```
 
 ### Question 6:
