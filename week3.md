@@ -36,6 +36,11 @@ SELECT COUNT(DISTINCT(affiliated_base_number))
 FROM sonorous-house-375411.nytaxi.external_fhv_2019;
 ```
 
+```
+SELECT COUNT(DISTINCT(affiliated_base_number))
+FROM sonorous-house-375411.nytaxi.external_fhv_2019_non_partitoned;
+```
+
 ### Question 3:
 
 
