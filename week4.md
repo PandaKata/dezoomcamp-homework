@@ -98,5 +98,11 @@ WHERE EXTRACT(YEAR FROM pickup_datetime) IN (2019)
 
 ### Question 5
 
+January
+
+[Link to my dashboard here](https://lookerstudio.google.com/reporting/79e4636e-d1bc-4402-8135-96a595a93548)
+
+Since I had problems with the fields I created being deleted and the date range being resetted I also decided to provide a pdf [here](https://drive.google.com/file/d/1_sE42NgYbK-om827qC014v14coCOo3Kh/view?usp=sharing).
+
 
 
