@@ -5,6 +5,10 @@
 
 ### Question 1
 
+61648442
+
+You can find my repo for the dbt part [here](https://github.com/PandaKata/dbt-zoomcamp).
+
 Query:
 
 ```
@@ -15,12 +19,13 @@ WHERE EXTRACT(YEAR FROM pickup_datetime) IN (2019,2020)
 
 ### Question 2
 
+I don't know, how to not make the chart use rounded numbers. But the values are actually 89.9 & 10.1 .
 
 ```mermaid
 pie
     title Pie Chart
-    "Yellow" : 89.91
-    "Green" : 10.11
+    "Yellow" : 89.9
+    "Green" : 10.1
 ```
 
 
