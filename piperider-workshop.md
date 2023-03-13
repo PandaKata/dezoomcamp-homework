@@ -4,14 +4,16 @@
 run: 
 
 `pip install dbt-bigquery`
+<br>
 `pip install 'piperider[bigquery]'`
 
 in dbt folder/repo run:
 
 `piperider init`
- 
+ <br>
 `piperider diagnose`
-`piperider run``
+<br>
+`piperider run`
 
 ### Question 1
 
